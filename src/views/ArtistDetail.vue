@@ -41,7 +41,7 @@ export default {
   computed: {
     dropzoneOptions() {
       return {
-        url: `http://127.0.0.1:8000/api/artists/${this.$route.params.id}/upload`,
+        url: 'http://127.0.0.1:8000/api/artists',
       };
     },
   },
@@ -52,7 +52,7 @@ export default {
   methods: {
     async fetchArtistData() {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/artists/${this.$route.params.id}`);
+        const response = await axios.get('http://127.0.0.1:8000/api/artists');
         this.artist = response.data; // Update the artist data
       } catch (error) {
         console.error('Error fetching artist data:', error);
